@@ -5,27 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>popup</title>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background: #333;
+        }
+
+        .clock {
+            font-size: 4em;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: yellow;
+            margin: 200px auto;
+        }
+
+        .clock span {
+            padding: 20px;
+            background: #444;
+        }
+    </style>
 </head>
 
 <body>
-
-    <!-- popup using html , css and javascript -->
-
-    <button>Click me</button>
-    <div class="popup-wrapper">
-
-        <div class="popup">
-            <div class="popup-close">X</div>
-            <div class="popup-content">
-                <h2>Ninja SALE!!</h2>
-                <p>50% of all ninja clothing, don't miss out!</p>
-                <a href="#">View clothing</a>
-            </div>
-        </div>
-    </div>
-    <!-- this is the end of popup box codes -->
+    <div class="clock"></div>
     <script src="app.js"></script>
 </body>
 
