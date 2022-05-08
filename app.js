@@ -1,34 +1,22 @@
-const correctAnswers = ["B", "B", "B", "B"];
+// POPUP PROJECT USING JAVASCRIPT
 
-const form = document.querySelector(".quiz-form");
-const result = document.querySelector(".result");
+/*
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let score = 0;
-  const userAnswers = [
-    form.q1.value,
-    form.q2.value,
-    form.q3.value,
-    form.q4.value,
-  ];
-  //   check answers
-  userAnswers.forEach((answer, index) => {
-    if (answer === correctAnswers[index]) {
-      score += 25;
-    }
-  });
-  //   show the result on the page
-  scrollTo(0, 0);
-  result.querySelector("span").textContent = `${score}%`;
-  result.classList.remove("d-none");
-  let output = 0;
-  const timer = setInterval(() => {
-    result.querySelector("span").textContent = `${output}%`;
-    if (output === score) {
-      clearInterval(timer);
-    } else {
-      output++;
-    }
-  }, 20);
+I'm a full stack developer using Mern-stack but a prefer Front-end ,i've gained skills through working of different projects 
+and internship at SOLVIT AFRICA and  i also use Javascript,PHP ,Bootstrap and Firebase. 
+I enjoy collaborating with team members as well as delivering the task given on time also i'm very passionate in codding
+
+*/
+const button = document.querySelector("button");
+const popup = document.querySelector(".popup-wrapper");
+const closeWrapper = document.querySelector(".popup-close");
+button.addEventListener("click", () => {
+  popup.style.display = "block";
+});
+closeWrapper.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+popup.addEventListener("click", () => {
+  popup.style.display = "none";
 });
