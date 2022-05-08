@@ -1,3 +1,4 @@
+// Ninja quiz project
 const correctAnswers = ["B", "B", "B", "B"];
 
 const form = document.querySelector(".quiz-form");
