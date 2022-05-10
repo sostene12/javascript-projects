@@ -13,24 +13,21 @@
 
 <body>
     <div class="container my-5 mx-auto">
-        <h1 class="text-muted text-center my-4">Weathe Forecast</h1>
+        <h1 class="text-muted text-center my-4">Weather Forecast</h1>
 
         <form class="change-location my-4 text-center text-muted">
             <label for="city">Enter a location for weather information</label>
             <input type="text" class="form-control p-3 mt-2" name="city">
         </form>
-        <div class="card shadow-lg rounded">
+        <div class="card shadow-lg rounded d-none">
             <img src="https://via.placeholder.com/400x300" alt="img" class="time card-img-top">
+            <div class="icon text-center mx-auto bg-light">
+                <img src="" alt="">
+            </div>
             <div class="icon bg-light mx-auto text-center">
                 <!-- icon -->
             </div>
-            <div class="text-muted text-uppercase text-center details">
-                <h5 class="my-3">city name</h5>
-                <div class="my-3">weather condition</div>
-                <div class="display-4 my-4">
-                    <span>temp</span>
-                    <span>&deg;C</span>
-                </div>
+            <div class="text-muted text-uppercase text-center details ">
             </div>
         </div>
     </div>
