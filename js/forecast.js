@@ -1,4 +1,4 @@
-const API_KEY = "IfwkHu4PBLchRPL48WVB7oluCCUnX8OB";
+const API_KEY = "P0HLNPhuaibxL3iU5AmG6mfqUdozOAVB";
 // const location = document.
 
 // get weather information

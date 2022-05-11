@@ -5,10 +5,9 @@ const time = document.querySelector("img.time");
 const icon = document.querySelector(".icon img");
 
 const updateUI = ({ cityDetails, weather }) => {
-  console.log(weather);
   // update the details template
   details.innerHTML = `
-  <h5 class="my-3">${cityDetails.EnglishName}</h5>
+  <h5 class="my-5">${cityDetails.EnglishName}</h5>
   <div class="my-3">${weather.WeatherText}</div>
   <div class="display-4 my-4">
       <span>${weather.Temperature.Metric.Value}</span>
@@ -58,4 +57,12 @@ cityForm.addEventListener("submit", (e) => {
     .catch((error) => {
       console.log(error.message);
     });
+  // localstorage
+  localStorage.setItem("city", city);
 });
+
+if (localStorage.getItem("city")) {
+  updateCity(localStorage.getItem("city"))
+    .then((data) => updateUI(data))
+    .catch((err) => console.log(err));
+}
