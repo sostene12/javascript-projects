@@ -4,6 +4,9 @@ const details = document.querySelector(".details");
 const time = document.querySelector("img.time");
 const icon = document.querySelector(".icon img");
 
+// instance of a class
+const forecast = new Forecast();
+
 const updateUI = ({ cityDetails, weather }) => {
   // update the details template
   details.innerHTML = `
@@ -38,12 +41,6 @@ const updateUI = ({ cityDetails, weather }) => {
   }
 };
 
-const updateCity = async (city) => {
-  const cityDetails = await getCity(city);
-  const weather = await getWeather(cityDetails.Key);
-  return { cityDetails, weather };
-};
-
 cityForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -52,7 +49,8 @@ cityForm.addEventListener("submit", (e) => {
   cityForm.reset();
 
   // update the ui with the new city
-  updateCity(city)
+  forecast
+    .updateCity(city)
     .then((data) => updateUI(data))
     .catch((error) => {
       console.log(error.message);
@@ -62,7 +60,8 @@ cityForm.addEventListener("submit", (e) => {
 });
 
 if (localStorage.getItem("city")) {
-  updateCity(localStorage.getItem("city"))
+  forecast
+    .updateCity(localStorage.getItem("city"))
     .then((data) => updateUI(data))
     .catch((err) => console.log(err));
 }
