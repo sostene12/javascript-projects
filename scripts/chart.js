@@ -20,17 +20,20 @@ class Chartroom {
   }
   //   listening to everychange
   getCharts(callback) {
-    this.charts.onSnapshot((snapshot) => {
-      console.log(snapshot.docs);
-      snapshot.docChanges().forEach((change) => {
-        if (change.type === "added") {
-          // update the ui
-          callback(change.doc.data());
-        }
+    this.charts
+      .where("room", "==", this.room)
+      .orderBy("created_at", "desc")
+      .onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "added") {
+            // update the ui
+            callback(change.doc.data());
+          }
+        });
       });
-    });
   }
 }
 
-const chartroom = new Chartroom("music", "abel");
+const chartroom = new Chartroom("general", "kalisa");
+// chartroom.addChart("a very warming aplaouses");
 chartroom.getCharts((data) => console.log(data));
