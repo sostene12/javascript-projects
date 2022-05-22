@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "babel": "babel src/index.js -w -o dist/assets/bundle.js"
+    "build": "webpack --mode production",
+    "serve": "webpack-dev-server --mode development"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,10 @@
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.18.0"
+    "@babel/preset-env": "^7.18.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }
